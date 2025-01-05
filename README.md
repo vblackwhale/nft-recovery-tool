@@ -4,6 +4,9 @@ Emergency tool to recover NFTs from a compromised wallet. Works on Polygon and c
 
 Author: blackwhale.eth
 
+This tool was developed to successfully recover NFTs from a compromised wallet that was being monitored by a sweeper bot. You can view the compromised wallet here:
+https://polygonscan.com/address/0x6f278db79a32ae52d57c4f10a737879c3a615c84
+
 ## Strategy
 
 The recovery process has three phases:
