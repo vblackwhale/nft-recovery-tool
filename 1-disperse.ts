@@ -31,7 +31,7 @@ const disperseABI = [
  * @param numWallets - Number of wallets to generate and fund (default: 50)
  * @returns Array of funded Ethereum wallets
  */
-async function generateAndFundWallets(
+async function fundWallets(
 	funderWallet: ethers.Wallet,
 	provider: ethers.providers.JsonRpcProvider,
 	numWallets: number = 50
@@ -68,7 +68,7 @@ async function generateAndFundWallets(
 		);
 
 		return wallets;
-	} catch (error) {
+	} catch (error: any) {
 		console.error('Error funding wallets:', error);
 		throw error;
 	}
@@ -78,21 +78,21 @@ async function generateAndFundWallets(
  * Main function to setup and fund the wallets
  * Generates wallets, funds them, and logs their addresses
  */
-async function setupWallets() {
+async function main() {
 	try {
-		const wallets = await generateAndFundWallets(funderWallet, provider);
-		console.log('Generated wallet addresses:');
+		const wallets = await fundWallets(funderWallet, provider);
+
 		wallets.forEach((wallet, index) => {
 			console.log(`Wallet ${index + 1}: ${wallet.address}`);
 		});
 		return wallets;
-	} catch (error) {
+	} catch (error: any) {
 		console.error('Setup failed:', error);
 	}
 }
 
 // Execute the wallet setup process
-setupWallets().catch((error) => {
+main().catch((error) => {
 	console.error(error);
 	process.exit(1);
 });
