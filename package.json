@@ -1,0 +1,36 @@
+{
+  "name": "nft-recovery-tool",
+  "version": "1.0.0",
+  "description": "Emergency tool to recover NFTs from a compromised wallet",
+  "scripts": {
+    "disperse": "npx ts-node ./1-disperse.ts",
+    "approve": "npx ts-node ./2-approve.ts",
+    "extract": "npx ts-node ./3-extract.ts"
+  },
+  "author": "blackwhale.eth",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ethers": "^5.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.0",
+    "ts-node": "^10.3.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackwhale-eth/nft-recovery-tool"
+  },
+  "keywords": [
+    "nft",
+    "ethereum",
+    "sweeper",
+    "bot",
+    "flashbots",
+    "polygon",
+    "recovery",
+    "web3"
+  ]
+}
